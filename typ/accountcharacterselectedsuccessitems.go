@@ -4,9 +4,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/hadamrd/retrodata"
 	"github.com/hadamrd/retrodata/retrotyp"
-
 	"github.com/hadamrd/retroproto"
 )
 
@@ -29,7 +27,7 @@ func NewAccountCharacterSelectedSuccessItem(extra string) (AccountCharacterSelec
 }
 
 func (m AccountCharacterSelectedSuccessItem) Serialized() (string, error) {
-	return fmt.Sprintf("%x~%x~%x~%x~%s", m.Id, m.TemplateId, m.Qty, int(m.Position), strings.Join(retro.EncodeItemEffects(m.Effects), ",")), nil
+	return fmt.Sprintf("%x~%x~%x~%x~%s", m.Id, m.TemplateId, m.Qty, int(m.Position), strings.Join(EncodeItemEffects(m.Effects), ",")), nil
 }
 
 // TODO

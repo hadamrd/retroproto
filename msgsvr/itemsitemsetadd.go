@@ -5,8 +5,8 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/hadamrd/retrodata"
 	"github.com/hadamrd/retrodata/retrotyp"
+	"github.com/hadamrd/retroproto/typ"
 
 	"github.com/hadamrd/retroproto"
 )
@@ -41,7 +41,7 @@ func (m ItemsItemSetAdd) Serialized() (string, error) {
 		itemsTemplatesIds[i] = fmt.Sprintf("%d", v)
 	}
 
-	return fmt.Sprintf("%d|%s|%s", m.Id, strings.Join(itemsTemplatesIds, ";"), strings.Join(retro.EncodeItemEffects(m.Effects), ",")), nil
+	return fmt.Sprintf("%d|%s|%s", m.Id, strings.Join(itemsTemplatesIds, ";"), strings.Join(typ.EncodeItemEffects(m.Effects), ",")), nil
 }
 
 func (m *ItemsItemSetAdd) Deserialize(extra string) error {
@@ -71,7 +71,7 @@ func (m *ItemsItemSetAdd) Deserialize(extra string) error {
 	}
 
 	effectsStr := sli[2]
-	effects, err := retro.DecodeItemEffects(strings.Split(effectsStr, ","))
+	effects, err := typ.DecodeItemEffects(strings.Split(effectsStr, ","))
 	if err != nil {
 		return err
 	}

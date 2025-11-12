@@ -4,9 +4,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/hadamrd/retrodata"
 	"github.com/hadamrd/retrodata/retrotyp"
-
 	"github.com/hadamrd/retroproto"
 )
 
@@ -80,7 +78,7 @@ func (m CommonMountData) Serialized() (string, error) {
 		fecundable = 1
 	}
 
-	effects := retro.EncodeItemEffects(m.Effects)
+	effects := EncodeItemEffects(m.Effects)
 
 	return fmt.Sprintf("%d:%d:%s:%s:%s:%d:%d,%d,%d:%d:%d:%d:%d:%d,%d:%d,%d:%d,%d:%d,%d,%d:%d,%d:%d:%d:%s:%d,%d:%d,%d",
 		m.Id,

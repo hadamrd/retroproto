@@ -11,7 +11,7 @@ import (
 )
 
 type SpellsList struct {
-	Spells []retrodata.CharacterSpell
+	Spells []retro.CharacterSpell
 }
 
 func NewSpellsList(extra string) (SpellsList, error) {

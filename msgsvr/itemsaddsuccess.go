@@ -5,11 +5,11 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/hadamrd/retrodata"
 	"github.com/hadamrd/retrodata/retrotyp"
 
 	"github.com/hadamrd/retroproto"
 	"github.com/hadamrd/retroproto/enum"
+	"github.com/hadamrd/retroproto/typ"
 )
 
 type ItemsAddSuccess struct {
@@ -57,7 +57,7 @@ func (m ItemsAddSuccess) Serialized() (string, error) {
 		case enum.ItemsAddSuccessItemType.Objects:
 			objects := make([]string, len(v.Objects))
 			for i, v := range v.Objects {
-				effects := retro.EncodeItemEffects(v.Effects)
+				effects := typ.EncodeItemEffects(v.Effects)
 				objects[i] = fmt.Sprintf("%x~%x~%x~%x~%s", v.Id, v.TemplateId, v.Quantity, int(v.Position), strings.Join(effects, ","))
 			}
 			items[i] = fmt.Sprintf("%s%s", string(v.ItemType), strings.Join(objects, ";"))
@@ -120,7 +120,7 @@ func (m *ItemsAddSuccess) Deserialize(extra string) error {
 					}
 					object.Position = retrotyp.CharacterItemPosition(position)
 				}
-				effects, err := retro.DecodeItemEffects(strings.Split(sli[4], ","))
+				effects, err := typ.DecodeItemEffects(strings.Split(sli[4], ","))
 				if err != nil {
 					return err
 				}
