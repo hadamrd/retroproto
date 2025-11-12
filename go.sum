@@ -8,12 +8,8 @@ github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/go-ozzo/ozzo-validation/v4 v4.3.0 h1:byhDUpfEwjsVQb1vBunvIjh2BHQ9ead57VkAEY4V+Es=
 github.com/go-ozzo/ozzo-validation/v4 v4.3.0/go.mod h1:2NKgrcHl3z6cJs+3Oo940FPRiTzuqKbvfrL2RxCj6Ew=
-github.com/kralamoure/dofus v0.0.0-20220428011622-33766786c1b4 h1:F9mOt9dZx3zCtJuRBwhhqpNnZc3Oa44wOpsIRi/pnG8=
-github.com/kralamoure/dofus v0.0.0-20220428011622-33766786c1b4/go.mod h1:a9PR6x+KzlR/jjIc/wtgA77iRMIi2P7PbTrfZg3Nkic=
 github.com/hadamrd/retrodata v0.0.0-20210524205513-a4b1f4842c56 h1:Mv49+JY3yn83PcDkMi3AjvO6xMbXJ/+7WlFh1oWAT+U=
 github.com/hadamrd/retrodata v0.0.0-20210524205513-a4b1f4842c56/go.mod h1:8/7yztO0OCeLv3hgUR+Pb1LUwJ9SgxpOIBdTGm0Qtgk=
-github.com/hadamrd/retrodatautil v0.0.0-20210518132922-a957c67f4004 h1:fLPhJlx0PH9vfjql18c1z5w9wd9x7WUftfhSyEhOSLU=
-github.com/hadamrd/retrodatautil v0.0.0-20210518132922-a957c67f4004/go.mod h1:eJrJByQELV98su1kI82XiwWNaWrSt2ElKtbm46UEhY4=
 github.com/pmezard/go-difflib v1.0.0 h1:4DBwDE0NGyQoBHbLQYPwSUPoCMWR5BEzIk/f1lZbAQM=
 github.com/pmezard/go-difflib v1.0.0/go.mod h1:iKH77koFhYxTK1pcRnkKkqfTogsbg7gZNVY4sRDYZ/4=
 github.com/spf13/pflag v1.0.5/go.mod h1:McXfInJRrz4CZXVZOBLb0bTZqETkiAhM9Iw0y3An2Bg=

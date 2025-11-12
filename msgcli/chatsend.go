@@ -5,13 +5,12 @@ import (
 	"html"
 	"strings"
 
-	"github.com/kralamoure/dofus/dofustyp"
-
 	"github.com/hadamrd/retroproto"
+	"github.com/hadamrd/retroproto/typ"
 )
 
 type ChatSend struct {
-	ChatChannel     dofustyp.ChatChannel
+	ChatChannel     typ.ChatChannel
 	PrivateReceiver string
 	Message         string
 	Params          string // TODO
@@ -37,7 +36,7 @@ func (m ChatSend) MessageName() string {
 
 func (m ChatSend) Serialized() (string, error) {
 	dest := string(m.ChatChannel)
-	if m.ChatChannel == dofustyp.ChatChannelPrivate {
+	if m.ChatChannel == typ.ChatChannelPrivate {
 		dest = m.PrivateReceiver
 	}
 
@@ -59,21 +58,21 @@ func (m *ChatSend) Deserialize(extra string) error {
 		r = v
 		break
 	}
-	chatChannel := dofustyp.ChatChannel(r)
+	chatChannel := typ.ChatChannel(r)
 
 	switch chatChannel {
 	case '¤':
-		chatChannel = dofustyp.ChatChannelNewbies
-	case dofustyp.ChatChannelPrivate:
+		chatChannel = typ.ChatChannelNewbies
+	case typ.ChatChannelPrivate:
 		return retroproto.ErrInvalidMsg
 	}
 
 	if len(sli[0]) >= 2 {
-		chatChannel = dofustyp.ChatChannelPrivate
+		chatChannel = typ.ChatChannelPrivate
 		m.PrivateReceiver = html.EscapeString(sli[0])
 	}
 
-	_, ok := dofustyp.ChatChannels[chatChannel]
+	_, ok := typ.ChatChannels[chatChannel]
 	if !ok {
 		return retroproto.ErrInvalidMsg
 	}

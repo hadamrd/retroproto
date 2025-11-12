@@ -5,13 +5,12 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/kralamoure/dofus/dofustyp"
-
 	"github.com/hadamrd/retroproto"
+	"github.com/hadamrd/retroproto/typ"
 )
 
 type ChatMessageSuccess struct {
-	ChatChannel dofustyp.ChatChannel
+	ChatChannel typ.ChatChannel
 	Id          int
 	PrivateTo   bool
 	Name        string
@@ -40,9 +39,9 @@ func (m ChatMessageSuccess) MessageName() string {
 func (m ChatMessageSuccess) Serialized() (string, error) {
 	chatChannel := string(m.ChatChannel)
 	switch m.ChatChannel {
-	case dofustyp.ChatChannelPublic:
+	case typ.ChatChannelPublic:
 		chatChannel = ""
-	case dofustyp.ChatChannelPrivate:
+	case typ.ChatChannelPrivate:
 		if m.PrivateTo {
 			chatChannel = "T"
 		} else {
@@ -61,15 +60,15 @@ func (m *ChatMessageSuccess) Deserialize(extra string) error {
 
 	switch sli[0] {
 	case "":
-		m.ChatChannel = dofustyp.ChatChannelPublic
+		m.ChatChannel = typ.ChatChannelPublic
 	case "F":
-		m.ChatChannel = dofustyp.ChatChannelPrivate
+		m.ChatChannel = typ.ChatChannelPrivate
 	case "T":
-		m.ChatChannel = dofustyp.ChatChannelPrivate
+		m.ChatChannel = typ.ChatChannelPrivate
 		m.PrivateTo = true
 	default:
 		for _, v := range sli[0] {
-			m.ChatChannel = dofustyp.ChatChannel(v)
+			m.ChatChannel = typ.ChatChannel(v)
 			break
 		}
 	}
