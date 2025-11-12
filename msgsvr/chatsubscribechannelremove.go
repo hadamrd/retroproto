@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/kralamoure/retroproto"
+	"github.com/hadamrd/retroproto"
 )
 
 type ChatSubscribeChannelRemove struct {

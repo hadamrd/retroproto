@@ -6,9 +6,9 @@ import (
 	"strings"
 	"time"
 
-	"github.com/kralamoure/retroproto"
-	"github.com/kralamoure/retroproto/enum"
-	"github.com/kralamoure/retroproto/typ"
+	"github.com/hadamrd/retroproto"
+	"github.com/hadamrd/retroproto/enum"
+	"github.com/hadamrd/retroproto/typ"
 )
 
 type GameMovement struct {

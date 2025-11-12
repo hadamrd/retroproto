@@ -5,10 +5,10 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/kralamoure/retro"
-	"github.com/kralamoure/retro/retrotyp"
+	"github.com/hadamrd/retro-data"
+	"github.com/hadamrd/retrodata/retrotyp"
 
-	"github.com/kralamoure/retroproto"
+	"github.com/hadamrd/retroproto"
 )
 
 type ItemsItemSetAdd struct {

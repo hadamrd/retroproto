@@ -5,13 +5,13 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/kralamoure/retro"
+	"github.com/hadamrd/retrodata"
 
-	"github.com/kralamoure/retroproto"
+	"github.com/hadamrd/retroproto"
 )
 
 type SpellsList struct {
-	Spells []retro.CharacterSpell
+	Spells []retrodata.CharacterSpell
 }
 
 func NewSpellsList(extra string) (SpellsList, error) {

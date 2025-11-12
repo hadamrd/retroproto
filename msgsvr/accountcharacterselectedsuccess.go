@@ -5,10 +5,10 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/kralamoure/retro/retrotyp"
+	"github.com/hadamrd/retrodata/retrotyp"
 
-	"github.com/kralamoure/retroproto"
-	"github.com/kralamoure/retroproto/typ"
+	"github.com/hadamrd/retroproto"
+	"github.com/hadamrd/retroproto/typ"
 )
 
 type AccountCharacterSelectedSuccess struct {

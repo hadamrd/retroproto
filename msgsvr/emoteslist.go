@@ -6,7 +6,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/kralamoure/retroproto"
+	"github.com/hadamrd/retroproto"
 )
 
 type EmotesList struct {

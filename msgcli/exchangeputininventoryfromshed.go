@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"strconv"
 
-	"github.com/kralamoure/retroproto"
+	"github.com/hadamrd/retroproto"
 )
 
 type ExchangePutInInventoryFromShed struct {

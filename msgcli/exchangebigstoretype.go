@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"strconv"
 
-	"github.com/kralamoure/retro/retrotyp"
+	"github.com/hadamrd/retrodata/retrotyp"
 
-	"github.com/kralamoure/retroproto"
+	"github.com/hadamrd/retroproto"
 )
 
 type ExchangeBigStoreType struct {

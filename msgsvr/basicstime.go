@@ -5,7 +5,7 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/kralamoure/retroproto"
+	"github.com/hadamrd/retroproto"
 )
 
 type BasicsTime struct {

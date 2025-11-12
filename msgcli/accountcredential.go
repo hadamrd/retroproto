@@ -1,26 +1,22 @@
+// File: msgcli/account_credential.go
 package msgcli
 
 import (
 	"fmt"
-	"strconv"
 	"strings"
 
-	"github.com/kralamoure/retroproto"
+	"github.com/hadamrd/retroproto"
 )
 
 type AccountCredential struct {
-	Username     string
-	Hash         string
-	CryptoMethod int
+	Token string
 }
 
 func NewAccountCredential(extra string) (AccountCredential, error) {
 	var m AccountCredential
-
 	if err := m.Deserialize(extra); err != nil {
 		return AccountCredential{}, fmt.Errorf("could not deserialize message: %w", err)
 	}
-
 	return m, nil
 }
 
@@ -33,34 +29,20 @@ func (m AccountCredential) MessageName() string {
 }
 
 func (m AccountCredential) Serialized() (string, error) {
-	return fmt.Sprintf("%s\n#%d%s", m.Username, m.CryptoMethod, m.Hash), nil
+	return fmt.Sprintf("#Z\n%s", m.Token), nil
 }
 
 func (m *AccountCredential) Deserialize(extra string) error {
-	sli := strings.Split(extra, "\n")
-
-	if len(sli) < 2 {
+	// Expected format: #Z\n{token}
+	if !strings.HasPrefix(extra, "#Z\n") {
 		return retroproto.ErrInvalidMsg
 	}
-
-	m.Username = sli[0]
-
-	if len(sli[1]) < 3 {
+	
+	m.Token = strings.TrimPrefix(extra, "#Z\n")
+	
+	if m.Token == "" {
 		return retroproto.ErrInvalidMsg
 	}
-
-	if sli[1][0] != '#' {
-		return retroproto.ErrInvalidMsg
-	}
-
-	cryptoMethod := sli[1][1]
-	cryptoMethodN, err := strconv.ParseInt(string(cryptoMethod), 10, 32)
-	if err != nil {
-		return err
-	}
-	m.CryptoMethod = int(cryptoMethodN)
-
-	m.Hash = sli[1][2:]
-
+	
 	return nil
 }

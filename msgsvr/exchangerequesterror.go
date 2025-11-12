@@ -3,8 +3,8 @@ package msgsvr
 import (
 	"fmt"
 
-	"github.com/kralamoure/retroproto"
-	"github.com/kralamoure/retroproto/enum"
+	"github.com/hadamrd/retroproto"
+	"github.com/hadamrd/retroproto/enum"
 )
 
 type ExchangeRequestError struct {

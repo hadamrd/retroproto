@@ -5,8 +5,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/kralamoure/retroproto"
-	"github.com/kralamoure/retroproto/typ"
+	"github.com/hadamrd/retroproto"
+	"github.com/hadamrd/retroproto/typ"
 )
 
 type AccountServersListSuccess struct {

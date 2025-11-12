@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/kralamoure/retroproto"
+	"github.com/hadamrd/retroproto"
 )
 
 type InfosLifeRestoreTimerStart struct {

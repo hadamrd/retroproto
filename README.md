@@ -12,7 +12,7 @@ and deserialization.
 ## Installation
 
 ```sh
-go get github.com/kralamoure/retroproto
+go get github.com/hadamrd/retroproto
 ```
 
 ## Examples
@@ -26,8 +26,8 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/kralamoure/retroproto"
-	"github.com/kralamoure/retroproto/msgcli"
+	"github.com/hadamrd/retroproto"
+	"github.com/hadamrd/retroproto/msgcli"
 )
 
 func main() {
@@ -55,8 +55,8 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/kralamoure/retroproto"
-	"github.com/kralamoure/retroproto/msgsvr"
+	"github.com/hadamrd/retroproto"
+	"github.com/hadamrd/retroproto/msgsvr"
 )
 
 func main() {
@@ -83,7 +83,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/kralamoure/retroproto/msgcli"
+	"github.com/hadamrd/retroproto/msgcli"
 )
 
 func main() {
@@ -113,7 +113,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/kralamoure/retroproto/msgsvr"
+	"github.com/hadamrd/retroproto/msgsvr"
 )
 
 func main() {

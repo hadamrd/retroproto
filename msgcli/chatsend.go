@@ -7,7 +7,7 @@ import (
 
 	"github.com/kralamoure/dofus/dofustyp"
 
-	"github.com/kralamoure/retroproto"
+	"github.com/hadamrd/retroproto"
 )
 
 type ChatSend struct {

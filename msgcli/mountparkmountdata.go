@@ -5,7 +5,7 @@ package msgcli
 import (
 	"fmt"
 
-	"github.com/kralamoure/retroproto"
+	"github.com/hadamrd/retroproto"
 )
 
 type MountParkMountData struct{}

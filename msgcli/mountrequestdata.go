@@ -6,7 +6,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/kralamoure/retroproto"
+	"github.com/hadamrd/retroproto"
 )
 
 type MountRequestData struct {

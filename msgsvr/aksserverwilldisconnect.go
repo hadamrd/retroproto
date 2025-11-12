@@ -3,7 +3,7 @@ package msgsvr
 import (
 	"fmt"
 
-	"github.com/kralamoure/retroproto"
+	"github.com/hadamrd/retroproto"
 )
 
 type AksServerWillDisconnect struct{}

@@ -5,9 +5,8 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/kralamoure/retro/retrotyp"
-
-	"github.com/kralamoure/retroproto"
+	"github.com/hadamrd/retrodata/retrotyp"
+	"github.com/hadamrd/retroproto"
 )
 
 type AccountBoost struct {
