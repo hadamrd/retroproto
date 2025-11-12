@@ -5,7 +5,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/hadamrd/retro-data"
+	"github.com/hadamrd/retrodata"
 	"github.com/hadamrd/retrodata/retrotyp"
 
 	"github.com/hadamrd/retroproto"
