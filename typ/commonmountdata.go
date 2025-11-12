@@ -80,7 +80,7 @@ func (m CommonMountData) Serialized() (string, error) {
 		fecundable = 1
 	}
 
-	effects := retrodata.EncodeItemEffects(m.Effects)
+	effects := retro.EncodeItemEffects(m.Effects)
 
 	return fmt.Sprintf("%d:%d:%s:%s:%s:%d:%d,%d,%d:%d:%d:%d:%d:%d,%d:%d,%d:%d,%d:%d,%d,%d:%d,%d:%d:%d:%s:%d,%d:%d,%d",
 		m.Id,
