@@ -12,9 +12,7 @@ start
 |Client|
 :""AccountCredential""
 ....
-* Username
-* CryptoMethod
-* Password;
+* Token
 :""AccountQueueRequest"";
 |Server|
 if (Bad version?) then (yes)

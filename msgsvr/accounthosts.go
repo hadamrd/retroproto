@@ -45,15 +45,24 @@ func (m AccountHosts) Serialized() (string, error) {
 
 func (m *AccountHosts) Deserialize(extra string) error {
 	sli := strings.Split(extra, "|")
+	
+	if len(sli) > 0 {
+		sli = sli[1:] // Skip first element
+	}
 
-	m.Value = make([]typ.AccountHostsHost, len(sli))
-	for i, v := range sli {
+	m.Value = make([]typ.AccountHostsHost, 0, len(sli))
+	for _, v := range sli {
+		// Skip empty entries
+		if v == "" {
+			continue
+		}
+		
 		host := &typ.AccountHostsHost{}
 		err := host.Deserialize(v)
 		if err != nil {
-			return err
+			return fmt.Errorf("failed to deserialize host '%s': %w", v, err)
 		}
-		m.Value[i] = *host
+		m.Value = append(m.Value, *host)
 	}
 
 	return nil
